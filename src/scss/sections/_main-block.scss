@@ -1,0 +1,161 @@
+.main-block {
+    padding-bottom: 57px;
+    @media (max-width: $mobile) {
+        padding-bottom: 80px;
+    }
+
+    &__container {
+
+    }
+
+    &__decor {
+        position: absolute;
+
+        img {
+            max-width: 100%
+        }
+    }
+
+    &__decor--1 {
+        left: -8%;
+        top: -9%;
+        width: percent(200, 520);
+        @media (max-width: $mobile) {
+            top: 2%;
+            left: 10%;
+            width: percent(160, 520);
+        }
+    }
+
+    &__decor--2 {
+        bottom: 40%;
+        right: 3%;
+        width: percent(200, 520);
+        @media (max-width: $mobile) {
+            bottom: 30%;
+            right: -3%;
+        }
+    }
+
+    &__decor--3 {
+        width: 140px;
+        left: -13%;
+        bottom: -30%;
+        @media (max-width: $mobile) {
+            width: 14%;
+            bottom: auto;
+            top: -5%;
+            left: 12px;
+        }
+    }
+
+    &__decor--4 {
+        @media (min-width: $mobile) {
+            display: none;
+        }
+        top: 10%;
+        right: 10px;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        padding-left: 100px;
+        @media (max-width: $pc) {
+            padding-left: 0;
+        }
+        @media (max-width: $mobile) {
+            flex-direction: column-reverse;
+        }
+
+    }
+
+    &__content {
+        width: percent(639, 1100);
+        flex-shrink: 0;
+        padding-right: 50px;
+        position: relative;
+        padding-top: 40px;
+        @media (max-width: $mobile) {
+            text-align: center;
+            padding-top: 0;
+            padding-right: 0;
+            width: 100%;
+        }
+
+        & > *:not(.main-block__decor) {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &__title {
+        font-family: var(--font-scondary);
+        color: var(--violet);
+        @include adaptiveValue("font-size", 75, 55, 0, 1199, 991);
+    }
+
+    &__subtitle {
+        font-family: var(--font-scondary);
+        @include adaptiveValue("font-size", 40, 24, 0, 1199, 991);
+    }
+
+    &__description {
+        margin: 40px 0;
+        font-size: 20px;
+        @media (max-width: $tablet) {
+            font-size: 18px;
+            margin: 24px 0;
+        }
+        @media (max-width: $mobile) {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    &__app-list {
+        display: flex;
+        gap: 24px;
+        @media (max-width: $mobile) {
+            gap: 16px;
+            justify-content: center;
+        }
+
+        a {
+            display: block;
+            transition: all 0.2s ease;
+            @media (hover: hover) {
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            img {
+                max-width: 100%
+            }
+        }
+    }
+
+    &__right {
+        position: relative;
+        flex-grow: 1;
+        text-align: right;
+        @media (max-width: $mobile) {
+            max-width: 400px;
+            margin: 0 auto 20px;
+            padding-top: 20px;
+        }
+    }
+
+
+    &__image {
+        position: relative;
+        z-index: 2;
+        margin-right: -65px;
+
+        img {
+            max-width: 100%
+        }
+    }
+}

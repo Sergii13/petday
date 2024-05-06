@@ -1,0 +1,24 @@
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    padding: 10px 40px;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    border-radius: 16px;
+    background: var(--yellow);
+    color: var(--primary);
+    @media (max-width: $mobile) {
+        height: 61px;
+        font-size: 18px;
+    }
+    @media (hover: hover) {
+        &:hover {
+            background: #cfaa14;
+        }
+    }
+}

@@ -1,0 +1,170 @@
+.why {
+    padding: 50px 0;
+    @media (max-width: $mobile) {
+        padding: 40px 0;
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    &__decor {
+        position: absolute;
+
+        img {
+            max-width: 100%
+        }
+    }
+
+    &__decor--1 {
+        left: -2%;
+        top: -4%;
+        @media (max-width: $mobile) {
+            width: 80px;
+            top: 10%;
+            left: 10%;
+        }
+    }
+
+    &__decor--2 {
+        right: 5%;
+        top: -4%;
+        @media (max-width: $mobile) {
+            transform: rotate(55deg);
+            width: 50px;
+            right: 8%;
+            top: -3%;
+        }
+    }
+
+    &__decor--3 {
+        bottom: -4%;
+        left: 5%;
+        @media (max-width: $mobile) {
+            width: 50px;
+            left: 0;
+            bottom: 100px;
+        }
+    }
+
+    &__decor--4 {
+        right: 0;
+        bottom: -10%;
+        @media (max-width: $mobile) {
+            width: 60px;
+            bottom: -50px;
+            transform: rotate(-30deg);
+        }
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 60, 40, 0, 1199, 991);
+        font-family: var(--font-scondary);
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+            @media (max-width: $mobile) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__wrap {
+        padding: 75px 0;
+        position: relative;
+        @media (max-width: $mobile) {
+            padding: 0;
+        }
+    }
+
+    &__image {
+        max-width: percent(462, 1200);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        @media (max-width: $pc) {
+            max-width: percent(402, 1200);
+        }
+
+        @media (max-width: $tablet) {
+            transform: translate(-50%, 30%);
+        }
+        @media (max-width: $mobile) {
+            position: relative;
+            transform: translate(0, 0);
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            left: 0;
+        }
+
+        img {
+            max-width: 100%
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include adaptiveValue("row-gap", 75, 24, 0, 1199, 991);
+        position: relative;
+        z-index: 2;
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__item {
+        &:nth-child(even) {
+            .why__item-inner {
+                @media (min-width: $mobile) {
+                    flex-direction: row-reverse;
+                    margin-left: auto;
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    &__item-inner {
+        display: flex;
+        align-items: flex-start;
+        gap: 0px 13px;
+        @media (min-width: $mobile) {
+            width: percent(414, 600);
+        }
+
+    }
+
+    &__item-icon {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--violet);
+    }
+
+    &__item-title {
+        font-size: 28px;
+        font-weight: 500;
+        color: var(--violet);
+        @media (max-width: $tablet) {
+            font-size: 24px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+            @media (max-width: $mobile) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    &__item-text {
+
+    }
+}

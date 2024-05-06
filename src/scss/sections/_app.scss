@@ -1,0 +1,85 @@
+.app {
+    padding: 50px 0 100px;
+    @media (max-width: $mobile) {
+        padding: 40px 0 80px;
+    }
+
+    &__container {
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        position: relative;
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    &__decor {
+        position: absolute;
+
+        img {
+            max-width: 100%
+        }
+    }
+
+    &__decor--1 {
+        top: 0;
+        left: 0;
+        @media (max-width: $mobile) {
+            width: 50px;
+            top: auto;
+            bottom: -50px;
+            transform: rotate(30deg);
+        }
+    }
+
+    &__decor--2 {
+        right: 24%;
+        top: -25%;
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+
+    &__decor--3 {
+        right: 18%;
+        bottom: -8%;
+        @media (max-width: $mobile) {
+            bottom: 35%;
+            right: 0;
+            width: 50px;
+            transform: rotate(90deg);
+        }
+    }
+
+    &__left {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 40, 24, 0, 1199, 991);
+        font-family: var(--font-scondary);
+
+       
+    }
+
+    &__qr-code {
+        position: relative;
+        z-index: 2;
+        width: 238px;
+        flex-shrink: 0;
+        padding: 18px;
+        border-radius: 16px;
+        border: 3px solid rgba(109, 115, 230, 0.10);
+        background: #FFF;
+        @media (max-width: $mobile) {
+            max-width: max-content;
+            margin: 0 auto;
+        }
+    }
+}
