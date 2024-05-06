@@ -87,19 +87,16 @@
         position: relative;
         z-index: 2;
         background: var(--white);
-        border-radius: 43.556px;
+        border-radius: 30px;
         border: 4.356px solid rgba(109, 115, 230, 0.10);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 42px 28px;
         transition: all 0.4s ease;
-        @include adaptiveValue("gap", 72, 48, 0, 1199, 991);
-        @media (max-width: $tablet) {
-            border-radius: 30px;
-        }
+        @include adaptiveValue("gap", 72, 64, 0, 1199, 991);
         @media (max-width: $mobile) {
-            padding: 50px 46px;
+            padding: 42px 41px 35px 28px;
             min-height: 335px;
             border-width: 2px;
         }
@@ -120,7 +117,7 @@
     }
 
     &__item-title-main {
-        @include adaptiveValue("font-size", 36, 28, 0, 1199, 991);
+        @include adaptiveValue("font-size", 32, 28, 0, 1199, 991);
         font-family: var(--font-scondary);
 
         &:not(:last-child) {
@@ -151,13 +148,13 @@
     }
 
     &__item-title {
-        @include adaptiveValue("font-size", 32, 24, 0, 1199, 991);
+        @include adaptiveValue("font-size", 28, 24, 0, 1199, 991);
         font-family: var(--font-scondary);
 
         &:not(:last-child) {
             margin-bottom: 8px;
             @media (max-width: $mobile) {
-                margin-bottom: 6px;
+                margin-bottom: 16px;
             }
         }
     }

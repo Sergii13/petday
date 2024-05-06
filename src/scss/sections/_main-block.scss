@@ -50,20 +50,17 @@
     }
 
     &__decor--4 {
-        @media (min-width: $mobile) {
-            display: none;
+        right: 0px;
+        top: 48%;
+        @media (max-width: $mobile) {
+            top: 10%;
+            right: 10px;
         }
-        top: 10%;
-        right: 10px;
     }
 
     &__row {
         display: flex;
         align-items: center;
-        padding-left: 100px;
-        @media (max-width: $pc) {
-            padding-left: 0;
-        }
         @media (max-width: $mobile) {
             flex-direction: column-reverse;
         }
@@ -71,7 +68,7 @@
     }
 
     &__content {
-        width: percent(639, 1100);
+        width: percent(572, 1200);
         flex-shrink: 0;
         padding-right: 50px;
         position: relative;
@@ -97,7 +94,7 @@
 
     &__subtitle {
         font-family: var(--font-scondary);
-        @include adaptiveValue("font-size", 40, 24, 0, 1199, 991);
+        @include adaptiveValue("font-size", 36, 24, 0, 1199, 991);
     }
 
     &__description {
@@ -152,10 +149,18 @@
     &__image {
         position: relative;
         z-index: 2;
-        margin-right: -65px;
+        flex-shrink: 0;
+        @include adaptiveValue("width", 664, 420, 0, 1199, 768);
+        @media (max-width: $mobile) {
+            width: 100% !important;
+        }
 
         img {
-            max-width: 100%
+            max-width: 100%;
+            transform: translateX(5%);
+            @media (max-width: $tablet) {
+                transform: translateX(0);
+            }
         }
     }
 }
